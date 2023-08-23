@@ -1,9 +1,7 @@
 package com.example.fcprojectboardadmin.service;
 
-
 import com.example.fcprojectboardadmin.dto.ArticleCommentDto;
 import com.example.fcprojectboardadmin.dto.UserAccountDto;
-import com.example.fcprojectboardadmin.dto.constant.RoleType;
 import com.example.fcprojectboardadmin.dto.properties.ProjectProperties;
 import com.example.fcprojectboardadmin.dto.response.ArticleCommentClientResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -172,8 +170,6 @@ class ArticleCommentManagementServiceTest {
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
                 "unoTest",
-                "pw",
-                Set.of(RoleType.ADMIN),
                 "uno-test@email.com",
                 "uno-test",
                 "test memo"

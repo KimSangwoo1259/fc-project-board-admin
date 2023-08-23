@@ -1,8 +1,8 @@
 package com.example.fcprojectboardadmin.service;
 
+
 import com.example.fcprojectboardadmin.dto.ArticleDto;
 import com.example.fcprojectboardadmin.dto.UserAccountDto;
-import com.example.fcprojectboardadmin.dto.constant.RoleType;
 import com.example.fcprojectboardadmin.dto.properties.ProjectProperties;
 import com.example.fcprojectboardadmin.dto.response.ArticleClientResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -33,7 +33,7 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 @DisplayName("비즈니스 로직 - 게시글 관리")
 class ArticleManagementServiceTest {
 
-    @Disabled("실제 API 호출 결과 관찰용이므로 평상시엔 비활성화")
+//    @Disabled("실제 API 호출 결과 관찰용이므로 평상시엔 비활성화")
     @DisplayName("실제 API 호출 테스트")
     @SpringBootTest
     @Nested
@@ -111,9 +111,9 @@ class ArticleManagementServiceTest {
             server.verify();
         }
 
-        @DisplayName("게시글 API을 호출하면, 게시글을 가져온다.")
+        @DisplayName("게시글 ID와 함께 게시글 API을 호출하면, 게시글을 가져온다.")
         @Test
-        void givenNothing_whenCallingArticleApi_thenReturnsArticle() throws Exception {
+        void givenArticleId_whenCallingArticleApi_thenReturnsArticle() throws Exception {
             // Given
             Long articleId = 1L;
             ArticleDto expectedArticle = createArticleDto("게시판", "글");
@@ -138,7 +138,7 @@ class ArticleManagementServiceTest {
 
         @DisplayName("게시글 ID와 함께 게시글 삭제 API을 호출하면, 게시글을 삭제한다.")
         @Test
-        void givenArticleId_whenCallingDeleteArticleApi_thenDeletesAnArticle() throws Exception {
+        void givenArticleId_whenCallingDeleteArticleApi_thenDeletesArticle() throws Exception {
             // Given
             Long articleId = 1L;
             server
@@ -171,8 +171,6 @@ class ArticleManagementServiceTest {
         private UserAccountDto createUserAccountDto() {
             return UserAccountDto.of(
                     "unoTest",
-                    "pw",
-                    Set.of(RoleType.ADMIN),
                     "uno-test@email.com",
                     "uno-test",
                     "test memo"

@@ -1,10 +1,9 @@
 package com.example.fcprojectboardadmin.controller;
 
-import com.fastcampus.projectboardadmin.config.SecurityConfig;
-import com.fastcampus.projectboardadmin.domain.constant.RoleType;
-import com.fastcampus.projectboardadmin.dto.ArticleCommentDto;
-import com.fastcampus.projectboardadmin.dto.UserAccountDto;
-import com.fastcampus.projectboardadmin.service.ArticleCommentManagementService;
+import com.example.fcprojectboardadmin.config.SecurityConfig;
+import com.example.fcprojectboardadmin.dto.ArticleCommentDto;
+import com.example.fcprojectboardadmin.dto.UserAccountDto;
+import com.example.fcprojectboardadmin.service.ArticleCommentManagementService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,8 +105,6 @@ class ArticleCommentManagementControllerTest {
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
                 "unoTest",
-                "pw",
-                Set.of(RoleType.ADMIN),
                 "uno-test@email.com",
                 "uno-test",
                 "test memo"
