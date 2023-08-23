@@ -1,11 +1,12 @@
 package com.example.fcprojectboardadmin.service;
 
+
 import com.example.fcprojectboardadmin.dto.ArticleDto;
 import com.example.fcprojectboardadmin.dto.UserAccountDto;
-import com.example.fcprojectboardadmin.dto.constant.RoleType;
 import com.example.fcprojectboardadmin.dto.properties.ProjectProperties;
 import com.example.fcprojectboardadmin.dto.response.ArticleClientResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -47,7 +48,7 @@ class ArticleManagementServiceTest {
 
     @DisplayName("게시글 API를 호출하면, 게시글을 가져온다.")
     @Test
-    void given_when_then() {
+    void givenNothing_whenCallingArticleApi_thenReturnsArticleList() {
         // Given
 
         // When
@@ -110,9 +111,9 @@ class ArticleManagementServiceTest {
             server.verify();
         }
 
-        @DisplayName("게시글 API을 호출하면, 게시글을 가져온다.")
+        @DisplayName("게시글 ID와 함께 게시글 API을 호출하면, 게시글을 가져온다.")
         @Test
-        void givenNothing_whenCallingArticleApi_thenReturnsArticle() throws Exception {
+        void givenArticleId_whenCallingArticleApi_thenReturnsArticle() throws Exception {
             // Given
             Long articleId = 1L;
             ArticleDto expectedArticle = createArticleDto("게시판", "글");
@@ -137,7 +138,7 @@ class ArticleManagementServiceTest {
 
         @DisplayName("게시글 ID와 함께 게시글 삭제 API을 호출하면, 게시글을 삭제한다.")
         @Test
-        void givenArticleId_whenCallingDeleteArticleApi_thenDeletesAnArticle() throws Exception {
+        void givenArticleId_whenCallingDeleteArticleApi_thenDeletesArticle() throws Exception {
             // Given
             Long articleId = 1L;
             server
@@ -170,8 +171,6 @@ class ArticleManagementServiceTest {
         private UserAccountDto createUserAccountDto() {
             return UserAccountDto.of(
                     "unoTest",
-                    "pw",
-                    Set.of(RoleType.ADMIN),
                     "uno-test@email.com",
                     "uno-test",
                     "test memo"
