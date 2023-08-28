@@ -1,7 +1,8 @@
 package com.example.fcprojectboardadmin.dto.response;
 
-import com.fastcampus.projectboardadmin.domain.constant.RoleType;
-import com.fastcampus.projectboardadmin.dto.AdminAccountDto;
+
+import com.example.fcprojectboardadmin.dto.AdminAccountDto;
+import com.example.fcprojectboardadmin.dto.constant.RoleType;
 
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;

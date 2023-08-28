@@ -1,6 +1,6 @@
 package com.example.fcprojectboardadmin.controller;
 
-import com.fastcampus.projectboardadmin.dto.response.AdminAccountResponse;
+import com.example.fcprojectboardadmin.dto.response.AdminAccountResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
