@@ -1,10 +1,8 @@
 package com.example.fcprojectboardadmin.controller;
-
-import com.fastcampus.projectboardadmin.config.SecurityConfig;
-import com.fastcampus.projectboardadmin.config.TestSecurityConfig;
-import com.fastcampus.projectboardadmin.domain.constant.RoleType;
-import com.fastcampus.projectboardadmin.dto.AdminAccountDto;
-import com.fastcampus.projectboardadmin.service.AdminAccountService;
+import com.example.fcprojectboardadmin.config.SecurityConfig;
+import com.example.fcprojectboardadmin.dto.AdminAccountDto;
+import com.example.fcprojectboardadmin.dto.constant.RoleType;
+import com.example.fcprojectboardadmin.service.AdminAccountService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
