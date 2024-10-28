@@ -1,4 +1,5 @@
 package com.example.fcprojectboardadmin.controller;
+import com.example.fcprojectboardadmin.config.GlobalControllerConfig;
 import com.example.fcprojectboardadmin.config.SecurityConfig;
 import com.example.fcprojectboardadmin.dto.AdminAccountDto;
 import com.example.fcprojectboardadmin.dto.constant.RoleType;
@@ -25,7 +26,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("View 컨트롤러 - 어드민 회원")
-@Import(SecurityConfig.class)
+@Import({SecurityConfig.class, GlobalControllerConfig.class})
 @WebMvcTest(AdminAccountController.class)
 class AdminAccountControllerTest {
 
